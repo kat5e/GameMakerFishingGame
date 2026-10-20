@@ -12,8 +12,8 @@
   "out_tilehborder":2,
   "out_tilevborder":2,
   "parent":{
-    "name":"RPG Starter Pack",
-    "path":"RPG Starter Pack.yyp",
+    "name":"Tilesets",
+    "path":"folders/Tilesets.yy",
   },
   "resourceType":"GMTileSet",
   "resourceVersion":"2.0",

@@ -10,8 +10,8 @@
   "name":"obj_enemyparent",
   "overriddenProperties":[],
   "parent":{
-    "name":"RPG Starter Pack",
-    "path":"RPG Starter Pack.yyp",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,
