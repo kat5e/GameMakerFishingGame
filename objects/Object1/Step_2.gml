@@ -1,3 +1,3 @@
 with (all){
-    depth = -bbox_bottom;
+   if (!on_ui_layer) depth = -bbox_bottom;
 }
