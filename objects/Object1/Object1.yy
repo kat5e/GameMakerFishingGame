@@ -35,6 +35,9 @@
     "name":"spr_player_idle_down",
     "path":"sprites/spr_player_idle_down/spr_player_idle_down.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"player_mask",
+    "path":"sprites/player_mask/player_mask.yy",
+  },
   "visible":true,
 }

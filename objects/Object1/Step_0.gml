@@ -15,3 +15,6 @@ if (_ver != 0 or _hor != 0) {
         else if (sprite_index == spr_player_walk_up) sprite_index = spr_player_idle_up;
         else if (sprite_index == spr_player_walk_down) sprite_index = spr_player_idle_down;
     }
+
+x = clamp(x, 0, room_width);
+y = clamp(y, 0, room_height);   
