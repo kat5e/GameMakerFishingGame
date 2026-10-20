@@ -2,6 +2,7 @@
   "$GMRoomUI":"",
   "%Name":"RoomUI",
   "children":[
+    {"$GMRUILayer":"v1","%Name":"ShopLayer","alignItems":2,"children":[],"flexDirection":0,"gridX":32,"gridY":32,"justifyContent":1,"name":"ShopLayer","nodeColour":4292407880,"resourceType":"GMRUILayer","resourceVersion":"2.0",},
     {"$GMRUILayer":"v1","%Name":"PauseLayer","alignItems":2,"children":[
         {"$GMRFlexPanel":"","%Name":"PausePanel","alignItems":2,"children":[
             {"$GMRFlexPanel":"","%Name":"ResumeButton","alignItems":2,"children":[
