@@ -4,3 +4,4 @@ move_speed = 1;
 
 tilemap = layer_tilemap_get_id("Tiles_Col");
 mask_index = player_mask;
+instance_create_layer(0, 0, "Instances", obj_inventory); 
