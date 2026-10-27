@@ -1,5 +1,7 @@
-interact_range = 24;
+interact_range = 1;
 can_interact = false;
+
+/*
 shop_open = false;
 layer_name = "ShopLayer"
 
@@ -12,3 +14,4 @@ update_shop = function () {
     }
 }
 update_shop();
+*/

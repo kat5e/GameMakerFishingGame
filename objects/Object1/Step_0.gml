@@ -2,6 +2,7 @@ if (window_get_width() != winw || window_get_height() != winh) {
     display_set_gui_maximise();
 }
 
+if (global.shop_open) exit;
 
 var _right = real(keyboard_check(ord("D"))) || (keyboard_check(vk_right)); 
 var _left= real(keyboard_check(ord("A"))) || (keyboard_check(vk_left));

@@ -1,10 +1,15 @@
-//this code was my attempt at trying to make the shop menu only interactable from
-//a specfic distance to the shop... 
-var _p = instance_nearest(x, y, Object1);
-can_interact = (_p != noone && point_distance(x, y, _p.x, _p.y) <= interact_range);
+//the cooldown is put in place since the shop was opening and closing on the same button press
+if (!variable_global_exists("shop_cooldown")) global.shop_cooldown = 0; 
 
-//i removed a && can_interact check from this if statement 
-if (keyboard_check_pressed(ord("E"))) {
-	shop_open = !shop_open;
-    update_shop();
+if (global.shop_cooldown > 0) global.shop_cooldown--;
+
+if (global.shop_open || global.shop_cooldown > 0) {
+    can_interact = false;
+    exit;
+}
+
+can_interact = (instance_exists(Object1) && distance_to_object(Object1) <= interact_range);
+
+if (can_interact && keyboard_check_pressed(ord("E"))) {
+    instance_create_depth(0, 0, -1000, obj_shop_panel);
 }
