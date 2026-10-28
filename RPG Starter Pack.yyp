@@ -29,6 +29,7 @@
   "name":"RPG Starter Pack",
   "resources":[
     {"id":{"name":"fnt_ui","path":"fonts/fnt_ui/fnt_ui.yy",},},
+    {"id":{"name":"events_manager","path":"objects/events_manager/events_manager.yy",},},
     {"id":{"name":"obj_button","path":"objects/obj_button/obj_button.yy",},},
     {"id":{"name":"obj_daynight","path":"objects/obj_daynight/obj_daynight.yy",},},
     {"id":{"name":"obj_enemy1","path":"objects/obj_enemy1/obj_enemy1.yy",},},
@@ -44,6 +45,8 @@
     {"id":{"name":"obj_shop_panel","path":"objects/obj_shop_panel/obj_shop_panel.yy",},},
     {"id":{"name":"obj_shop_sleep_button","path":"objects/obj_shop_sleep_button/obj_shop_sleep_button.yy",},},
     {"id":{"name":"Object1","path":"objects/Object1/Object1.yy",},},
+    {"id":{"name":"trawling_boat","path":"objects/trawling_boat/trawling_boat.yy",},},
+    {"id":{"name":"trawling_event","path":"objects/trawling_event/trawling_event.yy",},},
     {"id":{"name":"EndofDay","path":"rooms/EndofDay/EndofDay.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"Shop","path":"rooms/Shop/Shop.yy",},},
