@@ -1,93 +1,90 @@
 switch (current_state) {
 
-    case fish_state.idle:
-        // Press Space to cast the line
-        if (keyboard_check_pressed(vk_space)) {
-            // Trigger casting animation here if you have one
-            current_state = fish_state.casting;
-
-            // Set a random wait time for a bite (e.g., 2 to 6 seconds)
-            bite_timer = game_get_speed(gamespeed_fps) * random_range(2, 6);
-        }
-        break;
-
+//Determines which fish you will catch
     case fish_state.casting:
-        // Simulate a brief casting delay before the hook hits the water
-        // If using an animation, check if image_index == image_number - 1
-        current_state = fish_state.waiting; 
-        break;
-
-    case fish_state.waiting:
-        // Count down until a fish bites
-        bite_timer--;
-
-        if (bite_timer <= 0) {
-            current_state = fish_state.bite;
-            reaction_timer = reaction_window;
-            // Play an exclamation sound or visual effect here!
+        cast_timer--;
+        if (cast_timer <= 0) {
+            current_fish_id = fish_pick_random_id();
+			current_fish = global.fish_db[current_fish_id];
+            bite_timer = game_get_speed(gamespeed_fps) * random_range(2, 10); //this range is something the time to wait... we could change it as days progress to take longer as to represent overfishing and trawling
+            current_state = fish_state.waiting;
         }
         break;
 
+//Q cancels cast
+    case fish_state.waiting:
+        if (keyboard_check_pressed(ord("Q"))) { 
+            instance_destroy();
+            break;
+        }
+        bite_timer--;
+        if (bite_timer <= 0) {
+            reaction_timer = reaction_window;
+            current_state = fish_state.bite;
+        }
+        break;
+
+//Uses fish stats to set up the stardew minigame
     case fish_state.bite:
-        // Count down the reaction window
         reaction_timer--;
-
-        // If player taps Space in time, they trigger the mini-game
         if (keyboard_check_pressed(vk_space)) {
-            // Reset mini-game positions before starting
+            fish_speed = current_fish.speed;
+            drain_rate = current_fish.drain;
             fish_y = (track_top + track_bottom) / 2;
+            fish_target_y = fish_y;
+            fish_timer = 0;
             bar_y = track_bottom - bar_height;
-            progress = 50;
-
+            bar_vel = 0;
+            progress = 40;
             current_state = fish_state.minigame;
-        } 
-        // If they take too long, the fish escapes
-        else if (reaction_timer <= 0) {
-            show_debug_message("Fish nibbled and got away!");
-            current_state = fish_state.idle;
+        } else if (reaction_timer <= 0) {
+            fail("Too slow! The fish got away.");
         }
         break;
 
     case fish_state.minigame:
-	// --- 1. Move Fish Smoothly ---
         fish_timer--;
         if (fish_timer <= 0) {
             fish_target_y = random_range(track_top + 20, track_bottom - 20);
-            fish_timer = game_get_speed(gamespeed_fps) * random_range(1, 3); // Pick new target every 1-3 seconds
+            fish_timer = game_get_speed(gamespeed_fps) * random_range(1, 3);
         }
-        var diff = fish_target_y - fish_y;
-        fish_y += sign(diff) * min(abs(diff), 2.5);
+        var _diff = fish_target_y - fish_y;
+        fish_y += sign(_diff) * min(abs(_diff), fish_speed);
 
-        // --- 2. Player Bar Physics ---
-        if (keyboard_check(vk_space)) { // Holding space lifts the bar
-            bar_vel += lift_accel;
-        } else {
-            bar_vel += gravity_accel;
-        }
+        //Player bar physics
+        if (keyboard_check(vk_space)) bar_vel += lift_accel;
+        else bar_vel += gravity_accel;
         bar_vel = clamp(bar_vel, -6, 6);
         bar_y += bar_vel;
 
-        // Clamp bar boundaries
         if (bar_y < track_top) { bar_y = track_top; bar_vel = 0; }
         if (bar_y > track_bottom - bar_height) { bar_y = track_bottom - bar_height; bar_vel = 0; }
 
-        // --- 3. Overlap & Progress Logic ---
-        var fish_in_bar = (fish_y >= bar_y && fish_y <= (bar_y + bar_height));
-        if (fish_in_bar) {
-            progress += catch_rate;
-        } else {
-            progress -= drain_rate;
-        }
+        //Progress bar
+        var _fish_in_bar = (fish_y >= bar_y && fish_y <= bar_y + bar_height);
+        progress += _fish_in_bar ? catch_rate : -drain_rate;
         progress = clamp(progress, 0, 100);
 
-        // --- 4. Win/Lose Outcomes ---
         if (progress >= 100) {
-            show_debug_message("You caught a fish!");
-            // Reward the player with an item here
-            current_state = fish_state.idle;
+            inventory_full = false;
+            current_state = fish_state.decision;
         } else if (progress <= 0) {
-            show_debug_message("The fish got away!");
-            current_state = fish_state.idle;
+            fail("The " + current_fish.name + " got away!");
         }
+        break;
+
+    case fish_state.decision:
+        if (keyboard_check_pressed(ord("E"))) { //E to keep caught fish
+		    if (instance_exists(obj_inventory) && InventoryAdd(obj_inventory, current_fish_id)) instance_destroy();
+		    else inventory_full = true; //forces release if the inventory is full
+		}
+        else if (keyboard_check_pressed(ord("Q"))) { //Q to release caught fish
+            instance_destroy();
+        }
+        break;
+
+    case fish_state.escaped:
+        result_timer--;
+        if (result_timer <= 0) instance_destroy();
         break;
 }
