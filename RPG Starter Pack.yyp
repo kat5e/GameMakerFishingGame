@@ -54,6 +54,7 @@
     {"id":{"name":"char2_fish","path":"sprites/char2_fish/char2_fish.yy",},},
     {"id":{"name":"fish_all","path":"sprites/fish_all/fish_all.yy",},},
     {"id":{"name":"fish_used","path":"sprites/fish_used/fish_used.yy",},},
+    {"id":{"name":"player_fishing_sprites","path":"sprites/player_fishing_sprites/player_fishing_sprites.yy",},},
     {"id":{"name":"player_mask","path":"sprites/player_mask/player_mask.yy",},},
     {"id":{"name":"spr_battle_screen","path":"sprites/spr_battle_screen/spr_battle_screen.yy",},},
     {"id":{"name":"spr_box","path":"sprites/spr_box/spr_box.yy",},},

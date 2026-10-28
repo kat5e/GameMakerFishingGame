@@ -27,5 +27,9 @@ else {
         else if (sprite_index == spr_player_walk_down) sprite_index = spr_player_idle_down;
     }
 
+if (sprite_index == spr_fish_down) {
+        Object1.sprite_index = spr_player_fish_down_1;
+}
+
 x = clamp(x, 0, room_width);
 y = clamp(y, 0, room_height);   

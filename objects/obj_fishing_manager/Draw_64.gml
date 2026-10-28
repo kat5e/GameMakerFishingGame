@@ -18,28 +18,29 @@ switch (current_state) {
         break;
 
     case fish_state.minigame:
+        var _x = 300;
         // Track
         draw_set_color(c_dkgray);
-        draw_rectangle(track_x - 30, track_top, track_x + 30, track_bottom, false);
+        draw_rectangle(_x - 30, track_top, _x + 30, track_bottom, false);
         // Player bar
         draw_set_color(c_lime);
-        draw_rectangle(track_x - 25, bar_y, track_x + 25, bar_y + bar_height, false);
+        draw_rectangle(_x - 25, bar_y, _x + 25, bar_y + bar_height, false);
         // Fish
         if (sprite_exists(spr_item_icons)) {
-		    draw_sprite(spr_item_icons, current_fish_id, track_x, fish_y);
+		    draw_sprite(spr_item_icons, current_fish_id, _x, fish_y);
 		} 
 		else {
 		    draw_set_color(c_aqua);
-		    draw_circle(track_x, fish_y, 10, false);
+		    draw_circle(_x, fish_y, 10, false);
 		}
         // Progress meter
         draw_set_color(c_gray);
-        draw_rectangle(track_x + 50, track_top, track_x + 70, track_bottom, false);
+        draw_rectangle(_x + 50, track_top, _x + 70, track_bottom, false);
         draw_set_color(c_yellow);
         var _ph = (progress / 100) * track_height;
-        draw_rectangle(track_x + 50, track_bottom - _ph, track_x + 70, track_bottom, false);
+        draw_rectangle(_x + 50, track_bottom - _ph, _x + 70, track_bottom, false);
         break;
-
+    
     case fish_state.decision:
         draw_set_color(c_black);
         draw_set_alpha(0.85);

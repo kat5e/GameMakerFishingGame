@@ -8,6 +8,7 @@ switch (current_state) {
 			current_fish = global.fish_db[current_fish_id];
             bite_timer = game_get_speed(gamespeed_fps) * random_range(2, 10); //this range is something the time to wait... we could change it as days progress to take longer as to represent overfishing and trawling
             current_state = fish_state.waiting;
+            Object1.sprite_index = spr_player_fish_down_1;
         }
         break;
 
@@ -28,6 +29,7 @@ switch (current_state) {
     case fish_state.bite:
         reaction_timer--;
         if (keyboard_check_pressed(vk_space)) {
+            instance_create_layer(690, 170, "Instances", obj_enemy1);
             fish_speed = current_fish.speed;
             drain_rate = current_fish.drain;
             fish_y = (track_top + track_bottom) / 2;
@@ -70,18 +72,24 @@ switch (current_state) {
             current_state = fish_state.decision;
         } else if (progress <= 0) {
             fail("The " + current_fish.name + " got away!");
+            instance_destroy(obj_enemy1);
         }
         break;
 
     case fish_state.decision:
-        if (keyboard_check_pressed(ord("E"))) { //E to keep caught fish
-		    if (instance_exists(obj_inventory) && InventoryAdd(obj_inventory, current_fish_id)) instance_destroy();
-		    else inventory_full = true; //forces release if the inventory is full
-		}
-        else if (keyboard_check_pressed(ord("Q"))) { //Q to release caught fish
-            instance_destroy();
+         if (keyboard_check_pressed(ord("E"))) { // E to keep caught fish
+        if (instance_exists(obj_inventory) && InventoryAdd(obj_inventory, current_fish_id)) {
+            instance_destroy(); 
+            instance_destroy(obj_enemy1);
+        } else {
+            inventory_full = true; // Sets full flag, but you may want to handle logic below
         }
-        break;
+    } 
+    else if (keyboard_check_pressed(ord("Q"))) { // Q to release caught fish
+        instance_destroy();
+        instance_destroy(obj_enemy1);
+    }
+    break;
 
     case fish_state.escaped:
         result_timer--;

@@ -1,4 +1,4 @@
-if (instance_exists(Object1) &&  distance_to_object(Object1) < distance_to_player)
+if (instance_exists(Object1) &&  distance_to_object(Object1) < distance_to_player && global.fishing_active == true)
 {
     target_x = Object1.x;
     target_y = Object1.y;
