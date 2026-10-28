@@ -1,2 +1,2 @@
-event_timer = 12;
+event_timer = 100;
 trawl_event = false;
