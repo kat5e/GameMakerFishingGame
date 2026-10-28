@@ -1,14 +1,12 @@
 if (global.fishing_cooldown > 0) global.fishing_cooldown--;
 
-if (global.fishing_active || global.shop_open || global.fishing_cooldown > 0) {
-    can_interact = false;
-    exit;
-}
+var _blocked = global.fishing_active || global.shop_open || global.sleep_active || global.fishing_cooldown > 0;
 
-can_interact = (instance_exists(Object1) && distance_to_object(Object1) <= interact_range);
+near = instance_exists(Object1) && distance_to_object(Object1) <= interact_range;
+can_interact = near && !_blocked && !is_day_over();
 
 if (can_interact && keyboard_check_pressed(ord("E"))) {
     global.fishing_active = true;
     instance_create_depth(0, 0, -1000, obj_fishing_manager);
-    Object1.sprite_index = spr_fish_down;
+	Object1.sprite_index = spr_fish_down;
 }

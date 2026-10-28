@@ -1,5 +1,9 @@
-if (can_interact) {
-    draw_set_halign(fa_center);
-    draw_text(display_get_gui_width() / 2, display_get_gui_height() - 60, "Press E to fish");
-    draw_set_halign(fa_left);
-}
+draw_set_halign(fa_center);
+var _y = display_get_gui_height() - 128;
+
+if (can_interact) 
+	draw_text(display_get_gui_width() / 2, _y, "Press E to fish");
+else if (near && is_day_over() && !global.sleep_active) 
+	draw_text(display_get_gui_width() / 2, _y, "It's too late to fish. Go sleep.");
+
+draw_set_halign(fa_left);

@@ -1,0 +1,1 @@
+global.sleep_active = false;

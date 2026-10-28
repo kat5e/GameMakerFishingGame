@@ -3,7 +3,7 @@ if (!variable_global_exists("shop_cooldown")) global.shop_cooldown = 0;
 
 if (global.shop_cooldown > 0) global.shop_cooldown--;
 
-if (global.shop_open || global.shop_cooldown > 0) {
+if (global.shop_open || global.shop_cooldown > 0 || global.sleep_active) {
     can_interact = false;
     exit;
 }

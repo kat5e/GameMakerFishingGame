@@ -8,7 +8,7 @@ current_fish_id = -1;
 
 cast_timer = _fps * 0.5;
 bite_timer = 0;
-reaction_window = _fps * 1.0; //1 second to react
+reaction_window = _fps * 1.0; //1 second to react to bite
 reaction_timer = 0;
 
 result_msg = "";
@@ -26,12 +26,14 @@ fish_target_y = fish_y;
 fish_timer = 0;
 fish_speed = 2.5;
 
+//physics of the bar
 bar_height = track_height * 0.25;
 bar_y = track_bottom - bar_height;
 bar_vel = 0;
 gravity_accel = 0.4;
 lift_accel = -0.8;
 
+//these variables can easily be changed with upgrades in the future
 progress = 40;
 catch_rate = 0.5;
 drain_rate = 0.35;

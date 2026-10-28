@@ -2,6 +2,7 @@ var _cx = gw / 2;
 draw_set_halign(fa_center);
 draw_set_color(c_white);
 
+//this is for the fishing minigame, and currently uses this draw instead of actual assets
 switch (current_state) {
 
     case fish_state.casting:
@@ -9,7 +10,7 @@ switch (current_state) {
         break;
 
     case fish_state.waiting:
-        draw_text(_cx, gh * 0.1, "Waiting for a bite...   (Q to reel in)");
+        draw_text(_cx, gh * 0.1, "Waiting for a bite... (Q to reel in)");
         break;
 
     case fish_state.bite:
@@ -18,14 +19,14 @@ switch (current_state) {
         break;
 
     case fish_state.minigame:
-        var _x = 300;
-        // Track
+		var _x = 300;
+        //Track
         draw_set_color(c_dkgray);
         draw_rectangle(_x - 30, track_top, _x + 30, track_bottom, false);
-        // Player bar
+        //Player bar
         draw_set_color(c_lime);
         draw_rectangle(_x - 25, bar_y, _x + 25, bar_y + bar_height, false);
-        // Fish
+        //Fish
         if (sprite_exists(spr_item_icons)) {
 		    draw_sprite(spr_item_icons, current_fish_id, _x, fish_y);
 		} 
@@ -33,14 +34,14 @@ switch (current_state) {
 		    draw_set_color(c_aqua);
 		    draw_circle(_x, fish_y, 10, false);
 		}
-        // Progress meter
+        //Progress meter
         draw_set_color(c_gray);
         draw_rectangle(_x + 50, track_top, _x + 70, track_bottom, false);
         draw_set_color(c_yellow);
         var _ph = (progress / 100) * track_height;
         draw_rectangle(_x + 50, track_bottom - _ph, _x + 70, track_bottom, false);
         break;
-    
+
     case fish_state.decision:
         draw_set_color(c_black);
         draw_set_alpha(0.85);
@@ -61,7 +62,7 @@ switch (current_state) {
         break;
 }
 
-// reset draw state
+//reset draw state
 draw_set_halign(fa_left);
 draw_set_color(c_white);
 draw_set_alpha(1);
