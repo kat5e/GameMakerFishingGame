@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"spr_ocean_sounds",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":121.887344,
+  "exportDir":"",
+  "name":"spr_ocean_sounds",
+  "parent":{
+    "name":"Sprites",
+    "path":"folders/Sprites.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"spr_ocean_sounds.mp3",
+  "volume":1.0,
+}

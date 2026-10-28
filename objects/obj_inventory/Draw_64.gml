@@ -16,6 +16,6 @@ for (var i = 0; i < INVENTORY_SLOTS; i += 1)
     var yy = y + ((i div rowlength) * 36 );
     draw_sprite(spr_ui_button, 0, (xx), (yy))
     if (inventory[i] != -1){
-        draw_sprite(spr_item_icons, inventory[i], (xx+20),(yy+20));
+         draw_sprite_ext(spr_item_icons, inventory[i], xx + 9.5, yy + 16, 1.5, 1.5, 0, c_white, 1);
     }
 }

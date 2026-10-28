@@ -9,6 +9,7 @@ switch (current_state) {
             bite_timer = game_get_speed(gamespeed_fps) * random_range(2, 10); //this range is something the time to wait... we could change it as days progress to take longer as to represent overfishing and trawling
             current_state = fish_state.waiting;
 			Object1.sprite_index = spr_player_fish_down_1;
+            audio_play_sound(spr_water_splash, 10, false);
         }
         break;
 
@@ -29,6 +30,7 @@ switch (current_state) {
     case fish_state.bite:
         reaction_timer--;
         if (keyboard_check_pressed(vk_space)) {
+            audio_play_sound(spr_fish_reel, 10, false);
 			instance_create_layer(690, 170, "Instances", obj_enemy1);
             fish_speed = current_fish.speed;
             drain_rate = current_fish.drain;

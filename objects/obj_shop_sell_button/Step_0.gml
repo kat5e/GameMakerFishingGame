@@ -5,7 +5,7 @@ hover = point_in_rectangle(_mx, _my, x, y, x + sprite_width, y + sprite_height);
 
 if (hover && mouse_check_button_pressed(mb_left)) {
     var _total = 0, _count = 0, _fines = 0;
-
+    audio_play_sound(spr_sound_sellitem, 8, false);
     if (instance_exists(obj_inventory)) {
         for (var i = 0; i < INVENTORY_SLOTS; i++) {
             var _id = obj_inventory.inventory[i];

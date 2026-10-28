@@ -3,6 +3,6 @@ if (!trawl_event){
     
     if (event_timer <= 0) {
         trawl_event = true
-        instance_create_layer(x, y, "Instances", trawling_event);
+        instance_create_layer(0, 0, "Instances", trawling_event);
     }
 }

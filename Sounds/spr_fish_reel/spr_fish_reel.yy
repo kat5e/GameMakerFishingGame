@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"spr_fish_reel",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":4.075102,
+  "exportDir":"",
+  "name":"spr_fish_reel",
+  "parent":{
+    "name":"Sprites",
+    "path":"folders/Sprites.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"spr_fish_reel.mp3",
+  "volume":1.0,
+}
