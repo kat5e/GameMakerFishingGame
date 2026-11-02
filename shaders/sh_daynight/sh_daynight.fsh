@@ -5,7 +5,7 @@ varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
 
 const vec3 day_color = vec3(1.0, 1.0, 1.0);
-const vec3 sunset_color = vec3(0.95, 0.85, 0.6);
+const vec3 sunset_color = vec3(1.0, 0.9, 0.75);
 const vec3 night_color = vec3(0.25, 0.25, 0.55);
 
 uniform float time_of_day;

@@ -32,6 +32,10 @@ switch (state)
         break;
 
     case "gameover":
-        if (_adv) game_restart();
+        if (_adv) {
+			global.day = 1;
+			global.money = 0;
+			game_restart();
+		}
         break;
 }
