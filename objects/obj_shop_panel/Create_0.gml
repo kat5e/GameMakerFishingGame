@@ -13,11 +13,14 @@ panel_y = (display_get_gui_height() - panel_h) / 2;
 buttons = [
     { obj: obj_shop_sleep_button, ox: 264, oy: 296 },
     { obj: obj_shop_sell_button, ox: 144, oy: 296 },
-	{ obj: obj_shop_buy_button, ox: 24, oy: 296 },
+	{ obj: obj_shop_upgrade_button, ox: 16, oy: 50, key: "pole" },
+    { obj: obj_shop_upgrade_button, ox: 16, oy: 120, key: "line" },
+    { obj: obj_shop_upgrade_button, ox: 16, oy: 190, key: "bobber" }
 ];
 
 for (var i = 0; i < array_length(buttons); i++) {
     var _b = buttons[i];
     var _inst = instance_create_depth(panel_x + _b.ox, panel_y + _b.oy, -1001, _b.obj);
     _inst.panel = id;
+    if (variable_struct_exists(_b, "key")) _inst.key = _b.key;
 }

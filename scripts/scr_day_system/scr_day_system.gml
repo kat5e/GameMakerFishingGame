@@ -1,4 +1,5 @@
 global.day = 1;
+global.start_money = 0; 
 global.earned_today = 0;
 global.fines_pending = 0;
 global.sleep_active = false;
@@ -9,7 +10,7 @@ global.day_length_hours = 18;	//day ends at 12:00 AM
 
 function day_expenses(_day)
 {
-    return 25 + (_day - 1) * 5;   //currently increases by 5 per day, will essentially determine difficulty
+    return 10 + (_day - 1) * 15;   //currently increases by 15 per day, will essentially determine difficulty
 }
 
 function is_day_over() {
@@ -35,6 +36,29 @@ function time_to_clock(_t) {
 
 function can_sleep() {
     return instance_exists(obj_daynight) && obj_daynight.time_of_day >= global.sleep_min_time;
+}
+
+function reset_run()
+{
+    global.day = 1;
+    global.money = global.start_money;
+    global.earned_today = 0;
+    global.fines_pending = 0;
+
+    global.upgrades = { pole: 0, line: 0, bobber: 0 };
+
+    global.sleep_active = false;
+    global.fishing_active = false;
+    global.shop_open = false;
+    global.fishing_cooldown = 0;
+    global.shop_cooldown = 0;
+
+    if (instance_exists(obj_daynight)) obj_daynight.time_of_day = 0;
+
+    if (instance_exists(obj_inventory))
+    {
+        for (var i = 0; i < INVENTORY_SLOTS; i++) obj_inventory.inventory[i] = -1;
+    }
 }
 
 //This is where the end of day dialogue goes

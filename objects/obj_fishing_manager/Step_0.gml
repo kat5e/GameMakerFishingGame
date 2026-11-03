@@ -6,7 +6,7 @@ switch (current_state) {
         if (cast_timer <= 0) {
             current_fish_id = fish_pick_random_id();
 			current_fish = global.fish_db[current_fish_id];
-            bite_timer = game_get_speed(gamespeed_fps) * random_range(2, 10); //this range is something the time to wait... we could change it as days progress to take longer as to represent overfishing and trawling
+            bite_timer = game_get_speed(gamespeed_fps) * random_range(upgrade_bite_min(), upgrade_bite_max());
             current_state = fish_state.waiting;
 			Object1.sprite_index = spr_player_fish_down_1;
             audio_play_sound(spr_water_splash, 10, false);
@@ -33,7 +33,8 @@ switch (current_state) {
             audio_play_sound(spr_fish_reel, 10, false);
 			instance_create_layer(690, 170, "Instances", obj_enemy1);
             fish_speed = current_fish.speed;
-            drain_rate = current_fish.drain;
+            drain_rate = current_fish.drain * upgrade_drain_mult();
+			catch_rate = 0.5 * upgrade_catch_mult();
             fish_y = (track_top + track_bottom) / 2;
             fish_target_y = fish_y;
             fish_timer = 0;
