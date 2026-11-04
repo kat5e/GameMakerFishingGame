@@ -19,6 +19,7 @@
   "height":48,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"c150712d-fee2-4800-b9fe-e67a8ee249c3","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"c150712d-fee2-4800-b9fe-e67a8ee249c3","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"8a47dc05-f7cc-4e1b-a7e0-12112356c419","blendMode":0,"displayName":"default","isLocked":false,"name":"8a47dc05-f7cc-4e1b-a7e0-12112356c419","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_ui_button",

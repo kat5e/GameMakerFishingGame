@@ -18,6 +18,7 @@ buttons = [
     { obj: obj_shop_upgrade_button, ox: 16, oy: 190, key: "bobber" }
 ];
 
+
 for (var i = 0; i < array_length(buttons); i++) {
     var _b = buttons[i];
     var _inst = instance_create_depth(panel_x + _b.ox, panel_y + _b.oy, -1001, _b.obj);

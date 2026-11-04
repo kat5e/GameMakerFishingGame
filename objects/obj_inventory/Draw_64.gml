@@ -5,7 +5,7 @@ for (var i = 0; i < INVENTORY_SLOTS; i += 1)
 {
     var xx = x + ((i mod rowlength) * 56);
     var yy = y + ((i div rowlength) * 56);
-    draw_sprite_ext(spr_inventory_boxes, -1, (xx + -80), (yy), 2.5, 2.5, 0 ,c_white, 1);
+    draw_sprite_ext(spr_inventory_boxes, 0, (xx + -80), (yy), 2.5, 2.5, 0 ,c_white, 1);
 }
 for (var i = 0; i < INVENTORY_SLOTS; i += 1) {
     var xx = x + ((i mod rowlength) * 56);
