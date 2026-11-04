@@ -13,9 +13,9 @@ panel_y = (display_get_gui_height() - panel_h) / 2;
 buttons = [
     { obj: obj_shop_sleep_button, ox: 264, oy: 296 },
     { obj: obj_shop_sell_button, ox: 144, oy: 296 },
-	{ obj: obj_shop_upgrade_button, ox: 16, oy: 50, key: "pole" },
-    { obj: obj_shop_upgrade_button, ox: 16, oy: 120, key: "line" },
-    { obj: obj_shop_upgrade_button, ox: 16, oy: 190, key: "bobber" }
+	{ obj: obj_shop_upgrade_button_rod, ox: 16, oy: 50, key: "pole" },
+    { obj: obj_shop_upgrade_button_line, ox: 16, oy: 120, key: "line" },
+    { obj: obj_shop_upgrade_button_bobber, ox: 16, oy: 190, key: "bobber" }
 ];
 
 

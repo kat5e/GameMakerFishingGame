@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_shop_upgrade_button",
+  "%Name":"obj_shop_upgrade_button_line",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_shop_upgrade_button",
+  "name":"obj_shop_upgrade_button_line",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_ui_button",
-    "path":"sprites/spr_ui_button/spr_ui_button.yy",
+    "name":"spr_line_box",
+    "path":"sprites/spr_line_box/spr_line_box.yy",
   },
   "spriteMaskId":null,
   "visible":true,
