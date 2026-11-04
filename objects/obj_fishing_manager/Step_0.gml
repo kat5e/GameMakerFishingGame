@@ -66,7 +66,8 @@ switch (current_state) {
         if (bar_y > track_bottom - bar_height) { bar_y = track_bottom - bar_height; bar_vel = 0; }
 
         //Progress bar
-        var _fish_in_bar = (fish_y >= bar_y && fish_y <= bar_y + bar_height);
+		var _half = sprite_get_height(fish_spr) * fish_scale / 2;
+		var _fish_in_bar = (fish_y + _half >= bar_y && fish_y - _half <= bar_y + bar_height);
         progress += _fish_in_bar ? catch_rate : -drain_rate;
         progress = clamp(progress, 0, 100);
 

@@ -76,6 +76,7 @@
     {"id":{"name":"spr_enemy1","path":"sprites/spr_enemy1/spr_enemy1.yy",},},
     {"id":{"name":"spr_enemy2","path":"sprites/spr_enemy2/spr_enemy2.yy",},},
     {"id":{"name":"spr_fish_down","path":"sprites/spr_fish_down/spr_fish_down.yy",},},
+    {"id":{"name":"spr_fish_generic","path":"sprites/spr_fish_generic/spr_fish_generic.yy",},},
     {"id":{"name":"spr_item_icons","path":"sprites/spr_item_icons/spr_item_icons.yy",},},
     {"id":{"name":"spr_lava","path":"sprites/spr_lava/spr_lava.yy",},},
     {"id":{"name":"spr_npc1","path":"sprites/spr_npc1/spr_npc1.yy",},},

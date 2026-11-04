@@ -12,21 +12,21 @@ line_index = 0;
 char_count = 0;
 type_speed = 0.6;
 
-earned   = global.earned_today;
-fines    = global.fines_pending;
+earned = global.earned_today;
+fines = global.fines_pending;
+bonus = global.bonus_pending;
 expenses = day_expenses(global.day);
 
-start_summary = function()
-{
-    global.money -= (fines + expenses);
+start_summary = function() {
+    global.money += bonus - fines - expenses;
     state = "summary";
 }
 
-end_day = function()
-{
+end_day = function() {
     global.day++;
     global.earned_today = 0;
     global.fines_pending = 0;
+	global.bonus_pending = 0;
     if (instance_exists(obj_daynight)) obj_daynight.time_of_day = 0;
     instance_destroy();
 }

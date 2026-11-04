@@ -15,7 +15,7 @@ global.fish_db = [
 		desc: "Flounders are flat-bodied fish that dwell on the ocean floor. They are born with one eye on each side and as they age both eyes converge onto one side of the fish. Some species are threatened due to overfishing and habitat loss." },
     { name: "Mackerel",		weight: 16, speed: 2.5, drain: 0.2, value: 15,
 		desc: "Mackerel live in large migrating schools and can retract their fins in order to swim faster. Due to new regulations, Mackerel are currently stable and in the process of recovering from previous overfishing." },
-    { name: "Lionfish",		weight: 16,  speed: 2.5, drain: 0.2, value: 15, illegal: true,
+    { name: "Lionfish",		weight: 16,  speed: 2.5, drain: 0.2, value: 15, invasive: true,
 		desc: "Lionfish are an invasive species of coral fish. They have brightly colored warning marks and have venomous spines along their dorsal fins. These fish are extremely detrimental to the biodiversity of a reef ecosystem and should not be released into the wild." },
 	{ name: "Parrotfish",	weight: 9, speed: 3.5, drain: 0.3, value: 30,
 		desc: "Parrotfish got their name from their parrot-like beak which they use to eat coral. Parrotfish are not currently endangered but trawling destroys the coral ecosystems that they rely on to survive." },

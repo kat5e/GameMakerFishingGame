@@ -5,6 +5,8 @@ gh = display_get_gui_height();
 current_state = fish_state.casting;
 current_fish = undefined;
 current_fish_id = -1;
+fish_scale = 4;
+fish_spr = spr_fish_generic;
 
 cast_timer = _fps * 0.5;
 bite_timer = 0;
@@ -25,6 +27,7 @@ fish_y = (track_top + track_bottom) / 2;
 fish_target_y = fish_y;
 fish_timer = 0;
 fish_speed = 2.5;
+fish_scale = 2.5;
 
 //physics of the bar
 bar_height = track_height * 0.25;

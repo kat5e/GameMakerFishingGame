@@ -4,7 +4,7 @@ var _my = device_mouse_y_to_gui(0);
 hover = point_in_rectangle(_mx, _my, x, y, x + sprite_width, y + sprite_height);
 
 if (hover && mouse_check_button_pressed(mb_left)) {
-    var _total = 0, _count = 0, _fines = 0;
+    var _total = 0, _count = 0, _fines = 0, _bonus = 0;
     audio_play_sound(spr_sound_sellitem, 8, false);
     if (instance_exists(obj_inventory)) {
         for (var i = 0; i < INVENTORY_SLOTS; i++) {
@@ -15,6 +15,7 @@ if (hover && mouse_check_button_pressed(mb_left)) {
                 _total += _val;
                 _count++;
                 if (fish_is_illegal(_id)) _fines += floor(_val * global.illegal_fine_mult);
+				if (fish_is_invasive(_id)) _bonus += floor(_val * global.invasive_bonus_mult);
                 obj_inventory.inventory[i] = -1;
             }
         }
@@ -23,6 +24,7 @@ if (hover && mouse_check_button_pressed(mb_left)) {
     global.money += _total;
     global.earned_today += _total;
     global.fines_pending += _fines;
+	global.bonus_pending += _bonus;
 
     if (instance_exists(panel)) {
         panel.sell_msg = (_count > 0)

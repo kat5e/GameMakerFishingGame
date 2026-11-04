@@ -20,10 +20,11 @@ switch (state)
         draw_text(_cx, gh * 0.2, "Day " + string(global.day) + " Summary");
 
         var _rows = [
-            ["Money earned",        "+$" + string(earned)],
-            ["Illegal catch fines", "-$" + string(fines)],
-            ["Daily expenses",      "-$" + string(expenses)]
-        ];
+		    ["Money earned",        "+$" + string(earned)],
+		    ["Invasive bonus",      "+$" + string(bonus)],
+		    ["Illegal catch fines", "-$" + string(fines)],
+		    ["Daily expenses",      "-$" + string(expenses)]
+		];
         var _y = gh * 0.35;
         for (var i = 0; i < array_length(_rows); i++)
         {

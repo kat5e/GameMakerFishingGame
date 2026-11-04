@@ -27,12 +27,13 @@ switch (current_state) {
         draw_set_color(c_lime);
         draw_rectangle(_x - 25, bar_y, _x + 25, bar_y + bar_height, false);
         //Fish
-        if (sprite_exists(spr_item_icons)) {
-		    draw_sprite(spr_item_icons, current_fish_id, _x, fish_y);
-		} 
+        var _fspr = asset_get_index("spr_fish_generic");
+		if (sprite_exists(_fspr)) {
+		    draw_sprite_ext(fish_spr, 0, track_x - 200, fish_y, fish_scale, fish_scale, 0, c_white, 1);
+		}
 		else {
-		    draw_set_color(c_aqua);
-		    draw_circle(_x, fish_y, 10, false);
+		    draw_set_color(c_blue);
+		    draw_circle(track_x - 180, fish_y, 10 * fish_scale, false);
 		}
         //Progress meter
         draw_set_color(c_gray);
@@ -64,8 +65,15 @@ switch (current_state) {
 	        draw_set_color(c_white);
 	        _desc_y += 28;
 	    }
+		
+		if (variable_struct_exists(current_fish, "invasive") && current_fish.invasive) {
+		    draw_set_color(c_aqua);
+		    draw_text(_cx, _desc_y, "! INVASIVE !");
+		    draw_set_color(c_white);
+		    _desc_y += 28;
+		}
 
-	    // Description (wraps to the panel width)
+	    //Description
 	    var _desc = variable_struct_exists(current_fish, "desc") ? current_fish.desc : "You don't recognize this fish.";
 	    draw_set_color(c_ltgray);
 	    draw_text_ext(_cx, _desc_y, _desc, 22, _dpw - 40);
