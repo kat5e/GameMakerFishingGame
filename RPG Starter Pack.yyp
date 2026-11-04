@@ -117,6 +117,7 @@
     {"id":{"name":"spr_ui_icon3","path":"sprites/spr_ui_icon3/spr_ui_icon3.yy",},},
     {"id":{"name":"spr_ui_sell_button","path":"sprites/spr_ui_sell_button/spr_ui_sell_button.yy",},},
     {"id":{"name":"spr_ui_sleep_button","path":"sprites/spr_ui_sleep_button/spr_ui_sleep_button.yy",},},
+    {"id":{"name":"sprite_fishreel_go","path":"sprites/sprite_fishreel_go/sprite_fishreel_go.yy",},},
     {"id":{"name":"Sprite22","path":"sprites/Sprite22/Sprite22.yy",},},
     {"id":{"name":"Sprite23","path":"sprites/Sprite23/Sprite23.yy",},},
     {"id":{"name":"Sprite24","path":"sprites/Sprite24/Sprite24.yy",},},

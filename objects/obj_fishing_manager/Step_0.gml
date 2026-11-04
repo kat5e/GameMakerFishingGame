@@ -9,7 +9,9 @@ switch (current_state) {
             bite_timer = game_get_speed(gamespeed_fps) * random_range(upgrade_bite_min(), upgrade_bite_max());
             current_state = fish_state.waiting;
 			Object1.sprite_index = spr_player_fish_down_1;
-            audio_play_sound(spr_water_splash, 10, false);
+            if (!audio_is_playing(spr_water_splash)) {
+                 audio_play_sound(spr_water_splash, 10, false);
+            }
         }
         break;
 

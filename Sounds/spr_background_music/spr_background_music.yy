@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":75.04691,
+  "duration":204.43735,
   "exportDir":"",
   "name":"spr_background_music",
   "parent":{
