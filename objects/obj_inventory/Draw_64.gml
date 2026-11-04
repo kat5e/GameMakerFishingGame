@@ -1,21 +1,16 @@
 x = 370;
 y = 640;
-draw_sprite_stretched
-    (
-    spr_ui_back,
-    0,
-    x-6,
-    y-6,
-    24+rowlength*36,
-    24+(((INVENTORY_SLOTS-1)  div rowlength) +1) * 36
-);
 
 for (var i = 0; i < INVENTORY_SLOTS; i += 1)
 {
-    var xx = x + ((i mod rowlength) * 36);
-    var yy = y + ((i div rowlength) * 36 );
-    draw_sprite(spr_ui_button, 0, (xx), (yy))
+    var xx = x + ((i mod rowlength) * 56);
+    var yy = y + ((i div rowlength) * 56);
+    draw_sprite_ext(spr_inventory_boxes, -1, (xx + -80), (yy), 2.5, 2.5, 0 ,c_white, 1);
+}
+for (var i = 0; i < INVENTORY_SLOTS; i += 1) {
+    var xx = x + ((i mod rowlength) * 56);
+    var yy = y + ((i div rowlength) * 56);
     if (inventory[i] != -1){
-         draw_sprite_ext(spr_item_icons, inventory[i], xx + 9.5, yy + 16, 1.5, 1.5, 0, c_white, 1);
+         draw_sprite_ext(spr_item_icons, inventory[i], (xx - 62) , (yy + 18), 2.5, 2.5, 0, c_white, 1);
     }
 }
