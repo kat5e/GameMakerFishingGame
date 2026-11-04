@@ -110,6 +110,7 @@
     {"id":{"name":"spr_talk","path":"sprites/spr_talk/spr_talk.yy",},},
     {"id":{"name":"spr_tileset","path":"sprites/spr_tileset/spr_tileset.yy",},},
     {"id":{"name":"spr_title","path":"sprites/spr_title/spr_title.yy",},},
+    {"id":{"name":"spr_trawling_boat","path":"sprites/spr_trawling_boat/spr_trawling_boat.yy",},},
     {"id":{"name":"spr_trawling","path":"sprites/spr_trawling/spr_trawling.yy",},},
     {"id":{"name":"spr_ui_back","path":"sprites/spr_ui_back/spr_ui_back.yy",},},
     {"id":{"name":"spr_ui_box","path":"sprites/spr_ui_box/spr_ui_box.yy",},},
