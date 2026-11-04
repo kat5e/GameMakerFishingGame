@@ -6,6 +6,9 @@ switch (button_id) {
     case 1:
         break;
     case 2:
-        game_end();
+        obj_pause_manager.paused = false; 
+        obj_pause_manager.update_pause();
+        obj_start_menu_manager.started  = true; 
+        obj_start_menu_manager.update_started();
         break;
 }
